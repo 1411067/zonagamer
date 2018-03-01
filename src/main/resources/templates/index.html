@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Zona Gamers</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets2/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets2/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets2/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets2/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<div th:if="!${#strings.isEmpty(message)}">
+					<span style="color: red;" th:text="${message}"></span>
+				</div>
+				<div th:if="!${#strings.isEmpty(success)}">
+					<span style="color: blue;" th:text="${success}"></span>
+				</div>
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/gamers.jpg" alt="" /></span>
+						<h1>Busca tu Zona Gamer</h1>
+						<p>El punto de encuentro de la sociedad moderna<br /></p>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#inicio" class="active">Inicio</a></li>
+							<li><a href="#servicios">Servicios</a></li>
+							<li><a href="#galeria">Galería</a></li>
+							<li><a href="#login">Login</a></li>
+							<li><a href="#gamers">Gamers</a></li>
+							<li><a href="#lancenters">Lan Centers</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="inicio" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Sobre Nosotros</h2>
+										</header>
+										<p>Somos una empresa joven que brinda a los jugadores de computadoras (Gamer) la facilidad
+											de poder ubicar un lugar(LAN CENTER) en la cual se puedan desenvolver en su juego
+											preferido y a su vez también enterarse de los torneos que dichas zonas organizan.
+										</p>
+
+										<header class="major">
+											<h2>Misión</h2>
+										</header>
+										<p>Satisfacer las necesidades de las personas interesadas en los juegos de computadoras.</p>
+
+										<header class="major">
+											<h2>Visión</h2>
+										</header>
+										<p>Ser una gran empresa de alto reconocimiento en el desarrollo competitivo de los
+											gamers y poder promover LAN CENTER.
+										</p>
+									</div>
+									<span class="image"><img src="images/gamers1.png" alt="" height="500px" width="100px" /></span>
+								</div>
+							</section>
+
+						<!-- First Section -->
+							<section id="servicios" class="main special">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Como Gamer</h2>
+										</header>
+										<h5>- Podrás buscar los LANES más cercanos a tu distrito, para que puedas ir a divertirte
+											con tus amigos.
+										</h5>
+										<h5>- Te permitirá crear grupos para participar en torneos, con la finalidad de que puedas
+											ser competitivo.
+										</h5>
+										<h5>- Podrás realizar reservaciones de máquinas en los LANES, para que puedas ir con tus
+											amigos y tener un espacio donde distraerte.
+										</h5>
+
+										<header class="major">
+											<h2>Como Lan Center</h2>
+										</header>
+										<h5>- Publicar la disponibilidad de sus horarios y sus máquinas, para que los Gamer
+											puedan acercarse.
+										</h5>
+										<h5>- Reservar máquinas a sus clientes, con la finalidad de incentivar a que puedan
+											ser de mayor marketing.
+										</h5>
+										<h5>- Realizar torneos, con la finalidad de incentivar a los Gamer a los juegos de
+											computadoras.
+										</h5>
+									</div>
+								</div>
+							</section>
+
+						<!-- Second Section -->
+							<section id="galeria" class="main special">
+								<header class="major">
+									<h2>Galería</h2>
+									<p>Lan Center: El punto de encuentro de la sociedad moderna</p>
+								</header>
+
+								<iframe width="600" height="350" src="https://www.youtube.com/embed/UA5sBsbKKOs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+
+								<br/>
+								<br/>
+								<br/>
+
+								<h2>Fotos</h2>
+
+
+								<ul class="statistics">
+									<li>
+										<!--<span class="icon fa-code-fork"></span>-->
+										<img src="images/gamers2.jpg" alt="" height="200px" width="200px" />
+									</li>
+									<li>
+										<img src="images/gamers3.jpg" alt="" height="200px" width="200px" />
+									</li>
+									<li>
+										<img src="images/gamers4.jpg" alt="" height="200px" width="200px" />
+									</li>
+									<li>
+										<img src="images/gamers5.jpg" alt="" height="200px" width="200px" />
+									</li>
+								</ul>
+							</section>
+
+						<!-- Second Section -->
+						<section id="login" class="main special">
+							<header class="major">
+								<h2>Login</h2>
+								<p>Iniciar Sesión</p>
+
+								<section>
+									<form method="post" action="#" th:action="@{/login}" th:object="${dto}">
+										<div class="row uniform">
+
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="email" name="email" id="email" value="" placeholder="Ingresa tu correo" required="true" th:field="*{email}"/></li>
+													<li><input type="password" name="password" id="password" value="" placeholder="Ingresa tu contraseña" required="true" th:field="*{password}"/></li>
+												</ul>
+											</div>
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Iniciar Sesión" class="special" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</header>
+						</section>
+
+						<!-- Second Section -->
+						<section id="gamers" class="main special">
+							<header class="major">
+								<h2>Gamers</h2>
+								<p>Registrate como Gamer</p>
+
+								<section>
+									<form method="post" action="#" th:action="@{/registergamer}" th:object="${gamerDto}">
+										<div class="row uniform">
+
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="email" name="emailgamer" id="emailgamer" value="" placeholder="Ingresa tu correo" required="true" th:field="*{email}"/></li>
+													<li><input type="password" name="passwordgamer" id="passwordgamer" value="" placeholder="Ingresa tu contraseña" required="true" th:field="*{password}"/></li>
+													<li><input type="password" name="confirmpassgamer" id="confirmpassgamer" value="" placeholder="Confirma tu contraseña" required="true" th:field="*{confPassword}"/></li>
+												</ul>
+												<ul class="actions">
+													<li><input type="text" name="namegamer" id="namegamer" value="" placeholder="Ingresa tu nombre" required="true" th:field="*{name}"/></li>
+													<li><input type="text" name="lastnamegamer" id="lastnamegamer" value="" placeholder="Ingresa tu apellido" required="true" th:field="*{lastname}"/></li>
+												</ul>
+												<ul class="actions">
+													<li><input type="text" name="agegamer" id="agegamer" value="" placeholder="Ingresa tu edad" required="true" th:field="*{age}"/></li>
+													<li>
+														<div class="select-wrapper">
+															<select name="demo-sexo" id="demo-sexo" required="true" th:field="*{sex}">
+																<option value="">- Sexo -</option>
+																<option value="H">Hombre</option>
+																<option value="M">Mujer</option>
+															</select>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Registrar" class="special" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</header>
+						</section>
+
+
+						<section id="lancenters" class="main special">
+							<header class="major">
+								<h2>Lan Centers</h2>
+								<p>Registrate como Lan Center</p>
+
+								<section>
+									<form method="post" action="#" th:action="@{/registerlan}" th:object="${lanDto}">
+										<div class="row uniform">
+
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="email" name="emaillan" id="emaillan" value="" placeholder="Ingresa tu correo" required="true" th:field="*{email}"/></li>
+													<li><input type="password" name="passwordlan" id="passwordlan" value="" placeholder="Ingresa tu contraseña" required="true" th:field="*{password}"/></li>
+													<li><input type="password" name="confirmpasslan" id="confirmpasslan" value="" placeholder="Confirma tu contraseña" required="true" th:field="*{confPassword}"/></li>
+												</ul>
+
+												<ul class="actions">
+													<li><input type="text" name="namelan" id="namelan" value="" placeholder="Nombre Lan Center" required="true" th:field="*{name}"/></li>
+													<li><input type="text" name="phonelan" id="phonelan" value="" placeholder="Teléfono Lan Center" required="true" th:field="*{phone}"/></li>
+													<li>
+														<div class="select-wrapper">
+															<select name="demo-category" id="demo-category" required="true" th:field="*{district}">
+																<option value="">- Distrito -</option>
+																<option value="1">Jesús María</option>
+																<option value="2">Magdalena</option>
+																<option value="3">Lince</option>
+																<option value="4">Miraflores</option>
+															</select>
+														</div>
+													</li>
+												</ul>
+
+												<ul class="actions">
+													<li><input type="text" name="addresslan" id="addresslan" value="" placeholder="Dirección" required="true" th:field="*{address}"/></li>
+													<li><input type="text" name="horariolan" id="horariolan" value="" placeholder="Horario" required="true" th:field="*{horario}"/></li>
+												</ul>
+											</div>
+
+											<!--<div class="4u$">
+												<input type="email" name="email" id="email" value="" placeholder="Dirección de correo electrónico" />
+											</div>
+											<div class="4u$ ">
+												<input type="password" name="password" id="password" value="" placeholder="Introduce la contraseña" />
+											</div>-->
+											<!--<div class="12u$">
+												<div class="select-wrapper">
+													<select name="demo-category" id="demo-category">
+														<option value="">- Category -</option>
+														<option value="1">Manufacturing</option>
+														<option value="1">Shipping</option>
+														<option value="1">Administration</option>
+														<option value="1">Human Resources</option>
+													</select>
+												</div>
+											</div>
+											<div class="4u 12u$(small)">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked="true"/>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="4u 12u$(small)">
+												<input type="radio" id="demo-priority-normal" name="demo-priority"/>
+												<label for="demo-priority-normal">Normal</label>
+											</div>
+											<div class="4u$ 12u$(small)">
+												<input type="radio" id="demo-priority-high" name="demo-priority"/>
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="6u 12u$(small)">
+												<input type="checkbox" id="demo-copy" name="demo-copy"/>
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="6u$ 12u$(small)">
+												<input type="checkbox" id="demo-human" name="demo-human" checked="true"/>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="12u$">
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>-->
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Registrar" class="special" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</header>
+						</section>
+					</div>
+
+				<!-- Footer -->
+					<!--<footer id="footer">
+						<section>
+							<h2>Aliquam sed mauris</h2>
+							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn More</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Etiam feugiat</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+								<dt>Phone</dt>
+								<dd>(000) 000-0000 x 0000</dd>
+								<dt>Email</dt>
+								<dd><a href="#">information@untitled.tld</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>-->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets2/js/jquery.min.js"></script>
+			<script src="assets2/js/jquery.scrollex.min.js"></script>
+			<script src="assets2/js/jquery.scrolly.min.js"></script>
+			<script src="assets2/js/skel.min.js"></script>
+			<script src="assets2/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets2/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets2/js/main.js"></script>
+
+	</body>
+</html>
